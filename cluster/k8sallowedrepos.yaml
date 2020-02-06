@@ -12,6 +12,9 @@ spec:
     repos:
       - "gcr.io"
       - "k8s.gcr.io"
+      - "gke.gcr.io"
+      - "docker.io"
+      - "quay.io"
   enforcementAction: dryrun
 ---
 apiVersion: constraints.gatekeeper.sh/v1beta1
@@ -30,4 +33,7 @@ spec:
     repos:
       - "gcr.io"
       - "k8s.gcr.io"
+      - "gke.gcr.io"
+      - "docker.io"
+      - "quay.io"
   enforcementAction: deny
