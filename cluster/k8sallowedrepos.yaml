@@ -1,7 +1,7 @@
 apiVersion: constraints.gatekeeper.sh/v1beta1
 kind: K8sAllowedRepos
 metadata:
-  name: audit-non-gcr-repo
+  name: audit-repo
 spec:
   match:
     kinds:
@@ -10,20 +10,6 @@ spec:
   parameters:
     repos:
       - "gcr.io"
+      - "redis"
+      - "busybox"
   enforcementAction: dryrun
----
-apiVersion: constraints.gatekeeper.sh/v1beta1
-kind: K8sAllowedRepos
-metadata:
-  name: deny-non-gcr-repo-for-dev
-spec:
-  match:
-    kinds:
-      - apiGroups: [""]
-        kinds: ["Pod"]
-    namespaces:
-      - "dev"
-  parameters:
-    repos:
-      - "gcr.io"
-  enforcementAction: deny
