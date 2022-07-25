@@ -8,7 +8,6 @@ spec:
       - apiGroups: [""]
         kinds: ["Pod"]
   parameters:
-    message: "Audit non-gcr repo"
     repos:
       - "gcr.io"
   enforcementAction: dryrun
@@ -25,7 +24,6 @@ spec:
     namespaces:
       - "dev"
   parameters:
-    message: "Deny non-gcr repo."
     repos:
       - "gcr.io"
   enforcementAction: deny
